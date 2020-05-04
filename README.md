@@ -24,7 +24,7 @@ sklearn.mixture
 python main.py
 
 ```
-## Enter 2 for SignUp
+### Enter 2 for SignUp
 ![alt text](https://raw.githubusercontent.com/UtkarshBelwal/Speaker-Recognition-and-Authentication/master/images/SignUp.png)
 ```bash
 - Enter your name
@@ -34,7 +34,7 @@ python main.py
 
 A plot of your raw audio and a plot of your audio after preprocessing will be shown
 ```
-## Enter 3 for Changing your Passcode
+### Enter 3 for Changing your Passcode
 ![alt text](https://raw.githubusercontent.com/UtkarshBelwal/Speaker-Recognition-and-Authentication/master/images/ChangePassword.png)
 ```bash
 - Enter your name
@@ -43,7 +43,7 @@ A plot of your raw audio and a plot of your audio after preprocessing will be sh
 
 A plot of your raw audio and a plot of your audio after preprocessing will be shown
 ```
-## Enter 1 to Login
+### Enter 1 to Login
 ![alt text](https://raw.githubusercontent.com/UtkarshBelwal/Speaker-Recognition-and-Authentication/master/images/Login.png)
 ```bash
 - Enter 1 to start recording your Passcode
@@ -56,3 +56,10 @@ If Authentication failed:
   Not Authenticated, Try again"
 will be shown on the terminal
 ```
+
+## Django WebApp
+![alt text](https://raw.githubusercontent.com/UtkarshBelwal/Speaker-Recognition-and-Authentication/master/images/django.png)
+```bash
+  # Django WebApp for project
+  https://github.com/sarthakaditya52/AuthRec
+``` 
