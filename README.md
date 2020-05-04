@@ -9,7 +9,7 @@ commands.getoutput - to use terminal results
 from commands import getoutput as gt  
 numpy - for np arrays and their common functions  
 matplotlib.pyplot - audio waveforms  
-cPickle - t0 save models  
+cPickle - to save models  
 from scipy.io.wavfile import read as rd  
 from sklearn.mixture import GaussianMixture as GMM  
 from featureextraction import extract_features  
@@ -58,8 +58,5 @@ will be shown on the terminal
 ```
 
 ## Django WebApp
+https://github.com/sarthakaditya52/AuthRec
 ![alt text](https://raw.githubusercontent.com/UtkarshBelwal/Speaker-Recognition-and-Authentication/master/images/django.png)
-```bash
-  # Django WebApp for project
-  https://github.com/sarthakaditya52/AuthRec
-``` 
