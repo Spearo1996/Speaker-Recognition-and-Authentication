@@ -44,13 +44,13 @@ def start(audiopath) :
     samplerate , audio = wvrd.read(audiopath)
     if audio.ndim == 2 :
         audio = audio[: , 1]
-    plt.figure()
-    plt.plot(audio)
-    plt.show()
+    # plt.figure()
+    # plt.plot(audio)
+    # plt.show()
     audio = removeSilence(audio)
-    plt.figure()
-    plt.plot(audio)
-    plt.show()
+    # plt.figure()
+    # plt.plot(audio)
+    # plt.show()
     wvrd.write(audiopath, samplerate, audio)    
     
 # start('PasswordData/manav/manav1.wav')
