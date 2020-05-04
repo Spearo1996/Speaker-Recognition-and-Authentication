@@ -36,13 +36,9 @@ if __name__ == "__main__":
         print "press 1 to give passcode"
         input()
         record("temp" , 1 , "",8)
+        print("Recording Done")
         name = GMMTesting.testSingleaudio("temp1.wav")
-        # preprocessing.start("temp1.wav")
-        # print ("Hello "+name)
-        
-        
-        #corr , offset  = recognition.start1('temp1.wav'  , "PasswordData/"+name+"/"+name+"1.wav")
-        #corr , offset  = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"1.wav")
+        preprocessing.start("temp1.wav")
 
         corr1   = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"1.wav")
         corr2   = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"2.wav")
@@ -53,12 +49,11 @@ if __name__ == "__main__":
         confirm=0
         confirm=corr1+corr2+corr3+corr4+corr5
         if confirm > 2 :
-            print "Hello " + name+ ", How are you?"
+            print "Hello " + name+ ", you are successfully authenticated."
         else :
-            print ("Hello "+name)
-            print "Not Authenticated. Try Again!"
-#        gt("rm temp1.wav")
-        #authentication to be added
+            print ("Hello "+ name + ", your audio password does not match with the database.")
+            
+        gt("rm temp1.wav")
         
         
     elif (a == 2) :
