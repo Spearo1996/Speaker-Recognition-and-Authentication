@@ -29,5 +29,5 @@ def compare(audiopath1, audiopath2 ):
 		tmp.append(corr)
 # 		if(corr>0):
 # 			print corr
-	print np.mean(corr)
-compare('sfs1.wav','PasswordData/Utkarsh/Utkarsh2.wav')
+	# print np.mean(corr)
+# compare('sfs1.wav','PasswordData/Utkarsh/Utkarsh2.wav')

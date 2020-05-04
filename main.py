@@ -30,31 +30,33 @@ def record(Name, Range, Path,second) :
 
 if __name__ == "__main__":
     
-    print("Select Option:\n1. Sign In\t 2.Sign Up\t 3. Change Password")
+    print("Select Option:\n1. Sign In\n2. Sign Up\n3. Change Password")
     a=int(input())
     if(a == 1) :
         print "press 1 to give passcode"
         input()
-        #record("temp" , 1 , "",8)
+        record("temp" , 1 , "",8)
         name = GMMTesting.testSingleaudio("temp1.wav")
-        preprocessing.start("temp1.wav")
-        print name
+        # preprocessing.start("temp1.wav")
+        # print ("Hello "+name)
         
         
         #corr , offset  = recognition.start1('temp1.wav'  , "PasswordData/"+name+"/"+name+"1.wav")
         #corr , offset  = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"1.wav")
 
-        corr , offset  = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"1.wav")
-        corr , offset  = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"2.wav")
-        corr , offset  = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"3.wav")
-        corr , offset  = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"4.wav")
-        corr , offset  = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"5.wav")
+        corr1   = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"1.wav")
+        corr2   = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"2.wav")
+        corr3   = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"3.wav")
+        corr4   = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"4.wav")
+        corr5   = recognition.start('temp1.wav'  , "PasswordData/"+name+"/"+name+"5.wav")
         
-        # if corr > threshold :
-        #     print "Hello " + name
-        # else :
-        #     print name
-        #     print "Not Authenticated. Try Again!"
+        confirm=0
+        confirm=corr1+corr2+corr3+corr4+corr5
+        if confirm > 2 :
+            print "Hello " + name+ ", How are you?"
+        else :
+            print ("Hello "+name)
+            print "Not Authenticated. Try Again!"
 #        gt("rm temp1.wav")
         #authentication to be added
         
@@ -81,9 +83,42 @@ if __name__ == "__main__":
         gt("mkdir %s" %(passpath))
         
         #saving passcord after preprocessing
-        record(name,1,passpath,8)
+        print "give pass duration:"
+        dur = int(input())
+        
+        time.sleep(1)
+        print "Go"
+        record(name + '1.wav',10,passpath,dur)
         preprocessing.start(name+"1.wav")
-        gt("mv %s %s" %(name+"1.wav" , passpath))  
+        gt("mv %s %s" %(name+"1.wav" , passpath))
+        
+        print "Done"
+        time.sleep(1)
+        print "Go"
+        record(name + '2.wav',10,passpath,dur)
+        preprocessing.start(name+"2.wav")
+        gt("mv %s %s" %(name+"2.wav" , passpath))
+        
+        print "Done"
+        time.sleep(1)
+        print "Go"
+        record(name + '3.wav',10,passpath,dur)
+        preprocessing.start(name+"3.wav")
+        gt("mv %s %s" %(name+"3.wav" , passpath))
+        print "Done"
+
+        time.sleep(1)
+        print "Go"
+        record(name + '4.wav',10,passpath,dur)
+        preprocessing.start(name+"4.wav")
+        gt("mv %s %s" %(name+"4.wav" , passpath))
+        
+        print "Done"
+        time.sleep(1)
+        print "Go"
+        record(name + '5.wav',10,passpath,dur)
+        preprocessing.start(name+"5.wav")
+        gt("mv %s %s" %(name+"5.wav" , passpath))  
 
     elif a==3:
         print("Enter your Name : ")

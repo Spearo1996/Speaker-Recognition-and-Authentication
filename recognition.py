@@ -82,15 +82,15 @@ def results(crossarray , span , step) :
     
     corr_mean = np.mean(crossarray)
     
-    if corr == 1 :
-        print 'Successfully authenticated with correlation %.4f' %(corr) 
-        return corr , delayarray[ind]
+    # if corr == 1 :
+        # print 'Successfully authenticated with correlation %.4f' %(corr) 
+        # return corr , delayarray[ind]
     if corr >= threshold :
-        print 'Successfully authenticated with correlation %.4f %.4f' %(corr , corr_mean) 
-        return corr_mean , delayarray[ind]
-    print 'Not Authenticated'
+        # print 'Successfully authenticated with correlation %.4f %.4f' %(corr , corr_mean) 
+        return 1
+    # print 'Not Authenticated'
 #    print corr
-    return corr , delayarray[ind]
+    return 0
 
 def start(rec , save , step = 1) : 
     recprints = chromaFingerprint(rec)

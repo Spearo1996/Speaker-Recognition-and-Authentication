@@ -14,13 +14,11 @@ def testSingleaudio(testpath) :
     maxscore = -999999
     speaker = ""
     for model in os.listdir('GMMModels/') :
-        print model
         tmp = Models.retrieveModels('GMMModels/' + model)
         score = tmp.score(mfcc_features)
         if score > maxscore :
             maxscore = score
             speaker = model.split(".gmm")[0]
-        print tmp.score(mfcc_features)
     return speaker
 
 def testDataSet(datasetpath,succes_rate) :
@@ -43,11 +41,6 @@ def testDataSet(datasetpath,succes_rate) :
     				max_score = score
     				max_model = models_name[i]
     			i = i + 1
-    		
-    		print audio
-    		print max_model
-    		print max_score
-    		print "---------------------------------"
 
     		if max_model[:len(max_model)-4]== folder:
     			succes_rate+=1
